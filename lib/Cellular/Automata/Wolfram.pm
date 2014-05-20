@@ -1,5 +1,5 @@
 package Cellular::Automata::Wolfram;
-
+$Cellular::Automata::Wolfram::VERSION = '1.10_01';
 use 5.006;
 use strict;
 use warnings;
@@ -14,36 +14,10 @@ random gens window draw_file)];
 
 use constant INSTANCE_DEFAULTS => (rule=>110,radius=>1,width=>80,num_of_gens=>100,random=>"",colors=>['white','black'],draw_file=>'wolfram.png');
 
-require Exporter;
-require DynaLoader;
 require GD;
 require Carp;
 require Math::BaseCalc;
 require Graphics::ColorNames;
-
-use AutoLoader qw(AUTOLOAD);
-
-our @ISA = qw(Exporter DynaLoader);
-
-# Items to export into callers namespace by default. Note: do not export
-# names by default without a very good reason. Use EXPORT_OK instead.
-# Do not simply export all your public functions/methods/constants.
-
-# This allows declaration	use Cellular::Automata::Wolfram ':all';
-# If you do not need this, moving things directly into @EXPORT or @EXPORT_OK
-# will save memory.
-our %EXPORT_TAGS = ( 'all' => [ qw(
-	
-) ] );
-
-our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
-
-our @EXPORT = qw(
-	
-);
-our $VERSION = '1.1';
-
-bootstrap Cellular::Automata::Wolfram $VERSION;
 
 # Preloaded methods go here.
 
@@ -188,6 +162,8 @@ $self->set_first_gen($self->colors(),$self->width(),$self->random());
     $self->gens([@gens]);
 } # sub generate
 
+no warnings 'redefine';
+
 sub set_first_gen {
     my($self,$colors,$width,$random) = @_;
     my $i;
@@ -245,9 +221,7 @@ __END__
 
 =head1 NAME
 
-Cellular::Automata::Wolfram, implements one-dimensional non-totalistic 
-cellular automata as described in Dr. Steven Wolfram's, A New Kind of 
-Science, ISBN:1-57955-008-8
+Cellular::Automata::Wolfram - one-dimensional non-totalistic cellular automata
 
 =head1 VERSION
 
@@ -274,10 +248,14 @@ released November 17, 2002
 
 =head1 DESCRIPTION
 
-Dr. Steven Wolfram describes in his book, A New Kind of Science, 
-ISBN:1-57955-008-8 his path-breaking experiment where he comprehensively 
-explored a mathematical function which can be described (by me see the 
-reference for a detailed explanation) as follows:
+Cellular::Automata::Wolfram implements a one-dimensional non-totalistic
+cellular automata, as described in Dr. Steven Wolfram's, A New Kind of 
+Science, ISBN:1-57955-008-8.
+
+Dr Wolfram describes in his book his path-breaking experiment
+where he comprehensively 
+explored a mathematical function which can be described
+(by me, see the reference for a detailed explanation) as follows:
 
 Given an 1d array of numbers A:
 

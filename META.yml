@@ -1,0 +1,29 @@
+---
+abstract: 'one-dimensional non-totalistic cellular automata'
+author:
+  - 'James Freeman <racecarradar@yahoo.com>'
+build_requires:
+  Test::More: '0.88'
+configure_requires:
+  ExtUtils::MakeMaker: '6.30'
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 5.016, CPAN::Meta::Converter version 2.141170'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: '1.4'
+name: Cellular-Automata-Wolfram
+requires:
+  Carp: '0'
+  Class::MethodMaker: '0'
+  GD: '0'
+  Graphics::ColorNames: '0'
+  Math::BaseCalc: '0'
+  constant: '0'
+  perl: '5.006'
+  strict: '0'
+  warnings: '0'
+resources:
+  homepage: https://github.com/neilbowers/Cellular-Automata-Wolfram
+  repository: https://github.com/neilbowers/Cellular-Automata-Wolfram.git
+version: 1.10_01
